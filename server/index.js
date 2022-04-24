@@ -1,4 +1,5 @@
 const express = require("express");
+var cors = require('cors')
 const { Server } = require("ws");
 
 const app = express();
@@ -7,7 +8,7 @@ const port = 3001;
 const seriesList = require("./responses/series");
 const liveScores = require("./responses/liveGenerator");
 
-app.get("/series", (req, res) => {
+app.get("/series", cors({ origin: 'http://localhost:3000' }), (req, res) => {
   res.json(seriesList);
 });
 
@@ -25,4 +26,4 @@ wss.on("connection", (ws) => {
     gameIncrement = gameIncrement + 1;
     ws.send(JSON.stringify(liveScores(0, gameIncrement)));
   }, 1000);
-});
+});  
