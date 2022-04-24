@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
-import useWsClient from '../hooks/useWsClient';
-import { ENDPOINTS } from '../constants/server';
+import useWsClient from '../api/useWsClient';
+import { ENDPOINTS } from '../constants/api';
 import { TABLE_COLUMNS } from '../constants/table-data';
 
 import MatchBlock from './MatchCell';

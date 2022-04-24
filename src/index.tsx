@@ -4,10 +4,11 @@ import React, { useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import './index.css'
 
-import useApi, { filterBy } from "./hooks/useApi";
+import useApi from "./api/useApi";
 
 import GameTable from "./components/GameTable";
-import { ENDPOINTS } from "./constants/server";
+import { ENDPOINTS } from "./constants/api";
+import filterBy from "./api/filterBy";
 import GameFilter from "./components/GameFilter";
 
 export const App = () => {

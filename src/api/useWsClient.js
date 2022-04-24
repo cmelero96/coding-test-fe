@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import useWebSocket from 'react-use-websocket';
-import {PROTOCOLS, BASE_URL, ENDPOINTS} from '../constants/server';
+import {PROTOCOLS, BASE_URL, ENDPOINTS} from '../constants/api';
 
 /**
  * Get a WebSocket client by providing an endpoint. The data returned is already mapped.
