@@ -15,12 +15,9 @@ export const App = () => {
   const [filteredData, setFilteredData] = useState([]);
 
   const handleFilter = useCallback((field, textFilter) => {
-    if (field && textFilter) {
-      const filtered = data.filter(match => filterBy[field](match, textFilter));
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(data);
-    }
+    setFilteredData(field && textFilter
+      ? data.filter(match => filterBy[field](match, textFilter))
+      : data)
   }, [data]);
 
   if (error) {
