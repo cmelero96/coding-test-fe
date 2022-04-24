@@ -43,7 +43,6 @@ const GameTable = ({tournaments}) => {
               <td>{t.title}</td>
               <td>{t.startTime}</td>
               <MatchCell
-                key={'cell-'+t.id}
                 teams={t.teams}
                 match={t.match}
               />
