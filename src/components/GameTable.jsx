@@ -5,7 +5,7 @@ import useWsClient from '../hooks/useWsClient';
 import { ENDPOINTS } from '../constants/server';
 import { TABLE_COLUMNS } from '../constants/table-data';
 
-import { DataTable, TableBody, TableHeader } from './styled';
+import { DataTable, TableBody, TableHeader } from './styled.js';
 
 
 const GameTable = ({tournaments}) => {
