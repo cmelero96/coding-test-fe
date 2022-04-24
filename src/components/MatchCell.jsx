@@ -1,6 +1,7 @@
 import React from 'react';
+import { ScoreCell, TeamCell } from './styled';
 
-const MatchCell = ({teams, match}) => {
+const MatchBlock = ({teams, match}) => {
   const scoreComponents =
     match && match.score
       ? [<span key="score">{match.score[0]}</span>, <span key="score">{match.score[1]}</span>]
@@ -13,13 +14,17 @@ const MatchCell = ({teams, match}) => {
 
   return (
     <>
-      <td>{teams[0].name}</td>
-      <td>{[seriesComponents[0], scoreComponents[0]]}</td>
-      <td>x</td>
-      <td>{[scoreComponents[1], seriesComponents[1], ]}</td>
-      <td>{teams[1].name}</td>
+      <TeamCell first>
+        {teams[0].name}
+        <img src={teams[0].logoUrl} alt=""/>
+      </TeamCell>
+      <ScoreCell>{[seriesComponents[0], scoreComponents[0]]} x {[scoreComponents[1], seriesComponents[1]]}</ScoreCell>
+      <TeamCell second>
+        {teams[1].name}
+        <img src={teams[1].logoUrl} alt=""/>
+      </TeamCell>
     </>
   );
 };
 
-export default MatchCell;
+export default MatchBlock;

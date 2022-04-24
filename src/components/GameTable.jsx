@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import MatchCell from './MatchCell';
+import MatchBlock from './MatchCell';
 
 import useWsClient from '../hooks/useWsClient';
 import { ENDPOINTS } from '../constants/server';
@@ -29,27 +29,27 @@ const GameTable = ({tournaments}) => {
   return (
     <div>
       <DataTable>
-        <TableHeader>
+        <thead>
           <tr>
             {TABLE_COLUMNS.map((c,i) => (
-              <th key={i} colSpan={c.startsWith('team') ? 2 : 1}>{c}</th>
+              <th key={i}>{c}</th>
             ))}
           </tr>
-        </TableHeader>
+        </thead>
 
-        <TableBody>
+        <tbody>
           {localTournaments.map((t) => (
             <tr key={t.id}>
               <td>{t.title}</td>
               <td>{t.startTime}</td>
-              <MatchCell
+              <MatchBlock
                 teams={t.teams}
                 match={t.match}
               />
               <td>{t.tournament.name}</td>
             </tr>
           ))}
-        </TableBody>
+        </tbody>
       </DataTable>
     </div>
   );
