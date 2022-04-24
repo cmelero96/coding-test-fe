@@ -7,6 +7,7 @@ export const DataTable = styled.table`
   border-radius: 5px;
   overflow: hidden;
   
+  td:nth-child(1) { font-weight: 600 }
   td:nth-child(2) { color: ${COLORS.base[0]} }
   td:nth-child(3), th:nth-child(3) { text-align: right; }
   td:nth-child(5), th:nth-child(5) { text-align: left; }
