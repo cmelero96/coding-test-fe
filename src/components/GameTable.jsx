@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import MatchBlock from './MatchCell';
 
 import useWsClient from '../hooks/useWsClient';
 import { ENDPOINTS } from '../constants/server';
 import { TABLE_COLUMNS } from '../constants/table-data';
 
+import MatchBlock from './MatchCell';
 import { DataTable } from './styled.js';
-
 
 const GameTable = ({tournaments}) => {
   const [localTournaments, setLocalTournaments] = useState([]);
@@ -21,7 +20,7 @@ const GameTable = ({tournaments}) => {
     newMessage.forEach(match => {
       const tournament = localTournaments.find(t => t.id === match.id);
 
-      tournament.match = {...match}
+      if (tournament) tournament.match = {...match}
     })
 
   }, [localTournaments, newMessage, tournaments])

@@ -82,3 +82,10 @@ export const ScoreCell = styled.td`
     padding: 0 1em;
   }
 `
+export const InputWrapper = styled.div`
+
+
+  > select {
+    text-transform: capitalize;
+  }
+`

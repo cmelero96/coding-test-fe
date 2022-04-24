@@ -51,3 +51,11 @@ const getMappingFn = (endpoint) => {
 
   throw new Error('No mapping function found for endpoint: ' + endpoint);
 };
+
+export const filterBy = {
+  title: (match, textFilter) => match.title.toLowerCase().includes(textFilter.toLowerCase()),
+  tournament: (match, textFilter) => (
+    match.tournament.name.toLowerCase().includes(textFilter.toLowerCase()) ||
+    match.tournament.shortName.toLowerCase().includes(textFilter.toLowerCase())
+  ),
+}
