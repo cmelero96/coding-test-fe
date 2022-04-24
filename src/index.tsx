@@ -11,6 +11,14 @@ import { ENDPOINTS } from "./constants/api";
 import filterBy from "./api/filterBy";
 import GameFilter from "./components/GameFilter";
 
+/*
+ *  TODO:
+ *  - Add styling for filter
+ *  - Disable filter text when no option selected
+ *  - Add unit tests
+ *  - Add e2e test
+ */
+
 export const App = () => {
   const { data, loading, error } = useApi(ENDPOINTS.series, { method: 'GET' });
   const [filteredData, setFilteredData] = useState([]);
