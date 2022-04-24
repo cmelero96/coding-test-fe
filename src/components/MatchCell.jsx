@@ -10,8 +10,8 @@ const MatchBlock = ({teams, match}) => {
 
   const scoreComponents = isLoaded
     ? [
-        <span key="score" class="highlight">{match.score[0]}</span>,
-        <span key="score" class="highlight">{match.score[1]}</span>,
+        <span key="score" className="highlight">{match.score[0]}</span>,
+        <span key="score" className="highlight">{match.score[1]}</span>,
       ]
     : [<span key="score">0</span>, <span key="score">0</span>];
 
