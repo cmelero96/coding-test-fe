@@ -9,14 +9,10 @@ import useApi, { filterBy } from "./hooks/useApi";
 import GameTable from "./components/GameTable";
 import { ENDPOINTS } from "./constants/server";
 import GameFilter from "./components/GameFilter";
-import { FILTER_COLUMNS, FILTER_HANDLERS } from "./constants/table-data";
 
 export const App = () => {
   const { data, loading, error } = useApi(ENDPOINTS.series, { method: 'GET' });
   const [filteredData, setFilteredData] = useState([]);
-
-  console.log('.');
-  
 
   const handleFilter = useCallback((field, textFilter) => {
     if (field && textFilter) {
