@@ -14,16 +14,25 @@ const GameFilter = ({onFilter}) => {
 
   return (
     <InputWrapper>
-      <select defaultValue={''} onChange={(e) => setField(e.target.value)}>
-        <option disabled hidden value="">Filter by:</option>
-        <option value="">(No filter)</option>
+      <select
+        defaultValue=''
+        onChange={(e) => setField(e.target.value)}
+      >
+        <option disabled hidden value="">
+          Filter by:
+        </option>
+        <option value="">
+          (No filter)
+        </option>
         {FILTER_COLUMNS.map((option) => (
-          <option key={option} value={option}>{option}</option>
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </select>
 
       <input
-        defaultValue={''}
+        defaultValue=''
         onChange={(e) => {
           setInputText(e.target.value);
         }}

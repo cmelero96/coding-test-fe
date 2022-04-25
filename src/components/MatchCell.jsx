@@ -31,7 +31,7 @@ const MatchBlock = ({teams, match}) => {
       </TeamCell>
       <ScoreCell>
         {[seriesComponents[0], scoreComponents[0]]}
-        <span className="separator">x</span>
+        <span>x</span>
         {[scoreComponents[1], seriesComponents[1]]}
       </ScoreCell>
       <TeamCell second>

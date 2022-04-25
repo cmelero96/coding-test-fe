@@ -78,14 +78,40 @@ export const ScoreCell = styled.td`
     color: ${COLORS.base[0]};
   }
 
-  > .separator {
-    padding: 0 1em;
+  > span {
+    display: inline-block;
+    width: 20%;
+
+    &.separator {
+      font-weight: 500;
+    }
   }
 `
 export const InputWrapper = styled.div`
-
+  background-color: ${COLORS.base[90]};
+  border-radius: 5px;
+  padding: 2px 4px;
+  width: fit-content;
+  height: 2em;
+  display: flex;
+  align-items: center;
 
   > select {
+    border: none;
+    border-radius: 5px 0 0 5px;
     text-transform: capitalize;
+    color: ${COLORS.base[40]};
+    background-color: ${COLORS.base[85]};
+    height: 2em;
+  }
+
+  > input {
+    padding-left: 0.4em;
+    background-color: ${COLORS.base[90]};
+    border: 2px solid ${COLORS.base[85]};
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    color: ${COLORS.base[0]};
+    height: 2em;
   }
 `
