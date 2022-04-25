@@ -81,7 +81,8 @@ describe('App', () => {
         cy.get('@table').find('[data-testid="match-table-row"]');
       });
 
-      it('should update the scores using the WebSocket client messages', () => {});
+      // I can't find a way to mock the WebSocket client within the time restrictions.
+      it.skip('should update the scores using the WebSocket client messages', () => {});
     });
 
     describe('Filter component', () => {
