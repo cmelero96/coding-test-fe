@@ -1,4 +1,4 @@
-# General notes by the developer (me :D)
+## General notes by the developer (me :D)
 
 1. Since the project is pre-built with some Typescript features and I stated I preferred to work with Javascript instead, I had to do some workarounds to make everything work; namely add some //@ts-nocheck, re-install Cypress to work well with just JS, and in general play around with config files. Maybe I did some changes that weren't necessary for JS to work or maybe I didn't do it in the right way, but in the end my time was limited so I went for the options that "just worked".
 2. I thought relevant to mention that I chose to go with rendering the table as a `table` element instead of using `ul`/`ol` & `li` structure. I think semantically it makes more sense, it's less painful to style from scratch, but it comes at the cost that the table isn't completely responsive and goes out of the screen in small window/screen sizes. With more time this is easy to fix.
