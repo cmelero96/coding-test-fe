@@ -30,15 +30,16 @@ export const App = () => {
   }, [data]);
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <div data-testid="error-msg">Error: {error.message}</div>
   }
   if (loading) {
-    return <div>Loading...</div>;
+    return <div data-testid="loading-msg">Loading...</div>;
   }
-
+  
   return (
-    <div>
+    <div data-testid="app-wrapper">
       {<GameFilter onFilter={handleFilter}></GameFilter>}
+      <div style={{display: 'block', margin: '4px'}}/>
       {<GameTable tournaments={filteredData}></GameTable>}
     </div>
   );

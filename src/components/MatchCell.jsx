@@ -10,16 +10,19 @@ const MatchBlock = ({teams, match}) => {
 
   const scoreComponents = isLoaded
     ? [
-        <span key="score" className="highlight">{match.score[0]}</span>,
-        <span key="score" className="highlight">{match.score[1]}</span>,
+        <span data-testid="active-score" key="score" className="highlight">{match.score[0]}</span>,
+        <span data-testid="active-score" key="score" className="highlight">{match.score[1]}</span>,
       ]
-    : [<span key="score">0</span>, <span key="score">0</span>];
+    : [
+        <span data-testid="inactive-score" key="score">0</span>,
+        <span data-testid="inactive-score" key="score">0</span>
+      ];
 
   const seriesComponents =
     isLoaded && match.series
       ? [
-          <span key="series">{`(${match.series[0]}) `}</span>,
-          <span key="series">{` (${match.series[1]})`}</span>,
+          <span data-testid="series-score" key="series">{`(${match.series[0]}) `}</span>,
+          <span data-testid="series-score" key="series">{` (${match.series[1]})`}</span>,
         ]
       : [null, null];
 
