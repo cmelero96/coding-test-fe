@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {useDebounce} from 'use-debounce';
-import { FILTER_COLUMNS } from '../constants/table-data';
+import { FILTER_COLUMNS, FILTER_DEBOUNCE_TIME } from '../constants/table-data';
 import { InputWrapper } from './styled';
 
 const GameFilter = ({onFilter}) => {
   const [inputText, setInputText] = useState('');
-  const [textFilter] = useDebounce(inputText, 300);
+  const [textFilter] = useDebounce(inputText, FILTER_DEBOUNCE_TIME);
   const [field, setField] = useState();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const GameFilter = ({onFilter}) => {
     <InputWrapper data-testid="filter-wrapper">
       <select
         data-testid="select-filter"
-        defaultValue=''
+        defaultValue={null}
         onChange={(e) => setField(e.target.value)}
       >
         <option data-testid="filter-option-initial" disabled hidden value="">

@@ -38,7 +38,7 @@ module.exports = (on, config) => {
             test: /\.tsx?$/,
             loader: "ts-loader",
             options: { transpileOnly: true }
-          }          
+          },     
         ]
       }
     },
