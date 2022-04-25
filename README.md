@@ -56,6 +56,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### `yarn test:e2e`
+
+Launches the Cypress end-to-end / integration test runner in headed mode. Recommended command over `yarn test` since the latter only contains a dummy test for demonstration purposes.
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
