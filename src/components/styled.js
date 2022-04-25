@@ -53,7 +53,7 @@ export const TeamCell = styled.td`
   display: flex;
   height: inherit;
   overflow: hidden;
-  flex-direction: ${props => props.first ? 'row' : 'row-reverse' };
+  flex-direction: ${(props) => props.first ? 'row' : 'row-reverse' };
   justify-content: flex-end;
   align-items: center;
 

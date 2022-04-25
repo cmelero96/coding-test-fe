@@ -25,7 +25,7 @@ export const App = () => {
 
   const handleFilter = useCallback((field, textFilter) => {
     setFilteredData(field && textFilter
-      ? data.filter(match => filterBy[field](match, textFilter))
+      ? data.filter((match) => filterBy[field](match, textFilter))
       : data)
   }, [data]);
 

@@ -17,8 +17,8 @@ const GameTable = ({tournaments}) => {
   }, [tournaments]);
 
   useEffect(() => {
-    newMessage.forEach(match => {
-      const tournament = localTournaments.find(t => t.id === match.id);
+    newMessage.forEach((match) => {
+      const tournament = localTournaments.find((t) => t.id === match.id);
 
       if (tournament) tournament.match = {...match}
     })
