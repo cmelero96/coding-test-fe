@@ -82,7 +82,7 @@ describe('App', () => {
       });
 
       // I can't find a way to mock the WebSocket client within the time restrictions.
-      it.skip('should update the scores using the WebSocket client messages', () => {});
+      it.skip('(TODO) should update the scores using the WebSocket client messages', () => {});
     });
 
     describe('Filter component', () => {
