@@ -50,7 +50,7 @@ beforeEach(() => {
       });
 
       describe('Filtering functionality', () => {
-        FILTER_COLUMNS.forEach(filterColumn => {
+        FILTER_COLUMNS.forEach(column => {
           it(`should filter by ${column}`, () => {
             
           });
