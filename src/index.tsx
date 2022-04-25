@@ -4,12 +4,12 @@ import React, { useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import './index.css'
 
-import useApi from "./api/useApi";
-
-import GameTable from "./components/MatchTable";
-import { ENDPOINTS } from "./constants/api";
 import filterBy from "./api/filterBy";
-import GameFilter from "./components/MatchFilter";
+import useApi from "./api/useApi";
+import { ENDPOINTS } from "./constants/api";
+
+import MatchFilter from "./components/MatchFilter";
+import MatchTable from "./components/MatchTable";
 
 export const App = () => {
   const { data, loading, error } = useApi(ENDPOINTS.series, { method: 'GET' });
@@ -30,9 +30,9 @@ export const App = () => {
   
   return (
     <div data-testid="app-wrapper">
-      {<GameFilter onFilter={handleFilter}></GameFilter>}
+      {<MatchFilter onFilter={handleFilter}></MatchFilter>}
       <div style={{display: 'block', margin: '4px'}}/>
-      {<GameTable tournaments={filteredData}></GameTable>}
+      {<MatchTable tournaments={filteredData}></MatchTable>}
     </div>
   );
 };

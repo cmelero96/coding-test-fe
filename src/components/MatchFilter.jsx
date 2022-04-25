@@ -3,7 +3,7 @@ import {useDebounce} from 'use-debounce';
 import { FILTER_COLUMNS, FILTER_DEBOUNCE_TIME } from '../constants/table-data';
 import { InputWrapper } from './styled';
 
-const GameFilter = ({onFilter}) => {
+const MatchFilter = ({onFilter}) => {
   const [inputText, setInputText] = useState('');
   const [textFilter] = useDebounce(inputText, FILTER_DEBOUNCE_TIME);
   const [field, setField] = useState();
@@ -43,4 +43,4 @@ const GameFilter = ({onFilter}) => {
   );
 };
 
-export default GameFilter;
+export default MatchFilter;

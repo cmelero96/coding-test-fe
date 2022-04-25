@@ -7,7 +7,7 @@ import { TABLE_COLUMNS } from '../constants/table-data';
 import MatchBlock from './MatchCell';
 import { DataTable } from './styled.js';
 
-const GameTable = ({tournaments}) => {
+const MatchTable = ({tournaments}) => {
   const [localTournaments, setLocalTournaments] = useState([]);
 
   const { newMessage } = useWsClient(ENDPOINTS.series);
@@ -59,4 +59,4 @@ const GameTable = ({tournaments}) => {
   );
 };
 
-export default GameTable;
+export default MatchTable;
