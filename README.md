@@ -8,22 +8,22 @@
 
 ## Answers to questions posed by the development team (you :D)
 
-#### What was your overall impression of the coding test?
+### What was your overall impression of the coding test?
 I liked the test. I think it was simple enough that I can spend the majority of time thinking about higher-level stuff instead of outputting a lot of code before the deadline. How to structure the project for scalability, how to setup testing, expected user interaction, code style... these are examples of stuff I spent quite some time thinking about so I could deliver project as clean as possible.
 
 However, although I appreciate the effort to setup an initial boilerplate for the project, I think it was designed as a boilerplate for Typescript, so in my case of using just Javascript I think that boilerplate caused more issues than it helped.
 
-#### Did you find the coding test challenging? If so, which part/s?
+### Did you find the coding test challenging? If so, which part/s?
 As I said, not really. I was asked a very standard set of things. The most difficult part was to actually make it work at the beginning because of Typescript getting in my way.
 
-#### Were the instructions clear to follow? If not, what wasn’t clear?
+### Were the instructions clear to follow? If not, what wasn’t clear?
 I think the Figma had some loose ends in the sense that I wasn't 100% sure about some details (do I have to put a wrapper here? is this actually a column, or three, or how many? etc).
 
 Also, I saw no mention about the WebSockets at all in the project description.
 
 Last, I didn't exactly understand what all the data means. In the Figma I see some scores with green colour, others with parenthesis values. The WebSocket messages are just an initial value for the scores that increments by 1 every 3 seconds, and I assumed I should be doing nothing more than rendering these updates, but again I wasn't 100% sure of this. Were the `series` values not getting updated?
 
-#### How long did it take you to solve the coding test?
+### How long did it take you to solve the coding test?
 About 6 hours in total.
 
 # Grid Frontend Coding Test
