@@ -27,18 +27,18 @@ const GameTable = ({tournaments}) => {
 
   return (
     <div>
-      <DataTable data-testid="game-table">
+      <DataTable data-testid="match-table">
         <thead>
           <tr>
             {TABLE_COLUMNS.map((c,i) => (
-              <th key={i} data-testid="game-table-column">{c}</th>
+              <th key={i} data-testid="match-table-column">{c}</th>
             ))}
           </tr>
         </thead>
 
         <tbody>
           {localTournaments.map((t) => (
-            <tr key={t.id} data-testid="game-table-row">
+            <tr key={t.id} data-testid="match-table-row">
               <td>{t.title}</td>
               <td>{t.startTime}</td>
               <MatchBlock
@@ -49,7 +49,7 @@ const GameTable = ({tournaments}) => {
             </tr>
           ))}
           {localTournaments.length === 0 && (
-            <tr data-testid="game-table-empty-row" style={{textAlign: 'center'}}>
+            <tr data-testid="match-table-empty-row" style={{textAlign: 'center'}}>
               <td colSpan={TABLE_COLUMNS.length}>No data available</td>
             </tr>
           )}

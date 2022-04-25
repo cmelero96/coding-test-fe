@@ -6,10 +6,10 @@ import './index.css'
 
 import useApi from "./api/useApi";
 
-import GameTable from "./components/GameTable";
+import GameTable from "./components/MatchTable";
 import { ENDPOINTS } from "./constants/api";
 import filterBy from "./api/filterBy";
-import GameFilter from "./components/GameFilter";
+import GameFilter from "./components/MatchFilter";
 
 /*
  *  TODO:
@@ -33,7 +33,7 @@ export const App = () => {
     return <div data-testid="error-msg">Error: {error.message}</div>
   }
   if (loading) {
-    return <div data-testid="loading-msg">Loading...</div>;
+    return <div data-testid="loading-msg">Loading data...</div>;
   }
   
   return (

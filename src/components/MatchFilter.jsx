@@ -13,7 +13,7 @@ const GameFilter = ({onFilter}) => {
   }, [textFilter, field, onFilter]);
 
   return (
-    <InputWrapper>
+    <InputWrapper data-testid="filter-wrapper">
       <select
         data-testid="select-filter"
         defaultValue=''
