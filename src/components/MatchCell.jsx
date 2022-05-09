@@ -1,30 +1,29 @@
 import React, {useEffect, useState} from 'react';
-import {ScoreCell, TeamCell} from './styled';
+import MatchResult from './MatchResult';
+import {TeamCell} from './styled';
 
 const MatchBlock = ({teams, match}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [teamResults, setTeamResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoaded(!!(match && match.score));
+    if (match && match.score) {
+      setIsLoading(false);
+      setTeamResults([
+        {
+          score: match.score[0],
+          series: match.series && match.series[0],
+        },
+        {
+          score: match.score[1],
+          series: match.series && match.series[1],
+        },
+      ]);
+    } else {
+      setIsLoading(true);
+      setTeamResults([]);
+    }
   }, [match]);
-
-  const scoreComponents = isLoaded
-    ? [
-        <span data-testid="active-score" key="score" className="highlight">{match.score[0]}</span>,
-        <span data-testid="active-score" key="score" className="highlight">{match.score[1]}</span>,
-      ]
-    : [
-        <span data-testid="inactive-score" key="score">0</span>,
-        <span data-testid="inactive-score" key="score">0</span>
-      ];
-
-  const seriesComponents =
-    isLoaded && match.series
-      ? [
-          <span data-testid="series-score" key="series">{`(${match.series[0]}) `}</span>,
-          <span data-testid="series-score" key="series">{` (${match.series[1]})`}</span>,
-        ]
-      : [null, null];
 
   return (
     <>
@@ -32,11 +31,7 @@ const MatchBlock = ({teams, match}) => {
         <span>{teams[0].name}</span>
         <img src={teams[0].logoUrl} alt="" />
       </TeamCell>
-      <ScoreCell>
-        {[seriesComponents[0], scoreComponents[0]]}
-        <span>x</span>
-        {[scoreComponents[1], seriesComponents[1]]}
-      </ScoreCell>
+      <MatchResult isLoading={isLoading} results={teamResults}></MatchResult>
       <TeamCell second>
         <span>{teams[1].name}</span>
         <img src={teams[1].logoUrl} alt="" />
