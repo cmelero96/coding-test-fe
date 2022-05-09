@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDebounce} from 'use-debounce';
-import { FILTER_COLUMNS, FILTER_DEBOUNCE_TIME } from '../constants/table-data';
-import { InputWrapper } from './styled';
+import {FILTER_COLUMNS, FILTER_DEBOUNCE_TIME} from '../constants/table-data';
+import {InputWrapper} from './styled';
 
 const MatchFilter = ({onFilter}) => {
   const [inputText, setInputText] = useState('');
@@ -34,7 +34,7 @@ const MatchFilter = ({onFilter}) => {
 
       <input
         data-testid="input-filter"
-        defaultValue=''
+        defaultValue=""
         onChange={(e) => {
           setInputText(e.target.value);
         }}
